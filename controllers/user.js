@@ -1,5 +1,16 @@
+/* Filename: user.js
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Friday, October 28th, 2022
+Web Application Name: To Do List - Midterm */
+
+
+// Importing the Passport Module:
+
 let User = require('../models/user');
 let passport = require('passport');
+
+// Handling the Error Messages:
 
 function getErrorMessage(err) {
   console.log("===> Erro: " + err);
@@ -23,6 +34,8 @@ function getErrorMessage(err) {
   return message;
 };
 
+// Implementations for rendering Sign-in page:
+
 module.exports.renderSignin = function(req, res, next) {
   if (!req.user) {
     res.render('auth/signin', {
@@ -35,10 +48,12 @@ module.exports.renderSignin = function(req, res, next) {
   }
 };
 
+// Implementations for rendering Sign-up page:
+
 module.exports.renderSignup = function(req, res, next) {
   if (!req.user) {
 
-    // creates a empty new user object.
+    // Creating an Empty New User object:
     let newUser = User();
 
     res.render('auth/signup', {
@@ -51,6 +66,8 @@ module.exports.renderSignup = function(req, res, next) {
     return res.redirect('/');
   }
 };
+
+// Implementations for Sign-up operation:
 
 module.exports.signup = function(req, res, next) {
   if (!req.user && req.body.password === req.body.password_confirm) {
@@ -81,6 +98,8 @@ module.exports.signup = function(req, res, next) {
   }
 };
 
+// Implementations for Sign-out operation:
+
 module.exports.signout = function(req, res, next) {
   req.logout(function(err) {
     if (err) { 
@@ -89,6 +108,8 @@ module.exports.signout = function(req, res, next) {
     res.redirect('/');
   });
 };
+
+// Implementations for Sign-in operation:
 
 module.exports.signin = function(req, res, next){
   passport.authenticate('local', {   

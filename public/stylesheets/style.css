@@ -1,3 +1,10 @@
+/* Filename: style.css
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Friday, October 28th, 2022
+Web Application Name: To Do List - Midterm */
+
+
 html {
   position: relative;
   min-height: 100%;
@@ -5,6 +12,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  margin-left: 10px;
 }
 .footer {
   position: absolute;

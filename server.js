@@ -1,8 +1,18 @@
 #!/usr/bin/env node
 
+
+/* Filename: server.js
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Friday, October 28th, 2022
+Web Application Name: To Do List - Midterm */
+
+
 /**
  * Module dependencies.
  */
+
+// Importing the required Modules and Database & Passport Configurations:
 
 var configDB = require('./config/db');
 var app = require('./config/app');
@@ -13,6 +23,8 @@ const configurePassport = require('./config/passport');
 /**
  * Get port from environment and store in Express.
  */
+
+// Implementation for Ports:
 
 var db = configDB();
 var port = normalizePort(process.env.PORT || '3000');

@@ -1,7 +1,11 @@
-// Filename: appclient.js
-// Student: Meysam Mahdavikhansari
-// StudentId: 301248106
-// Date: Oct 27, 2022
+/* Filename: appclient.js
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Friday, October 28th, 2022
+Web Application Name: To Do List - Midterm */
+
+
+// Implementations to be used in Front End:
 
 console.log('app script is working.');
 

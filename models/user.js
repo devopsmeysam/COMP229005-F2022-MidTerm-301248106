@@ -1,6 +1,17 @@
+/* Filename: user.js
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Friday, October 28th, 2022
+Web Application Name: To Do List - Midterm */
+
+
+// Importing Mongoose and Crypto Modules:
+
 let mongoose = require('mongoose');
 let crypto = require('crypto');
 let Schema = mongoose.Schema;
+
+// Modeling the Sign-up components:
 
 let UserSchema = mongoose.Schema(
     {
@@ -41,6 +52,8 @@ let UserSchema = mongoose.Schema(
     }
 );
 
+// Implementations to be used in Sign-up page:
+
 UserSchema.virtual('fullName')
 .get(function() {
     return this.firstName + ' ' + this.lastName;
@@ -50,6 +63,8 @@ UserSchema.virtual('fullName')
     this.firstName = splitName[0] || '';
     this.lastName = splitName[1] || '';
 });
+
+// Implementations for security purposes:
 
 UserSchema.pre('save', function(next) {
     if (this.password) {
@@ -66,6 +81,8 @@ UserSchema.methods.hashPassword = function(password) {
 UserSchema.methods.authenticate = function(password) {
     return this.password === this.hashPassword(password);
 };
+
+// Implementations for having unique usernames:
 
 UserSchema.statics.findUniqueUsername = function(username, suffix,
     callback) {
@@ -85,6 +102,8 @@ UserSchema.statics.findUniqueUsername = function(username, suffix,
         }
     });
 };
+
+// Implementations for final setting up and exporting it:
 
 UserSchema.set('toJSON', {
     getters: true,

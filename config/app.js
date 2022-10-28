@@ -1,3 +1,12 @@
+/* Filename: app.js
+Student Name: Meysam Mahdavikhansari
+Student ID: 301248106
+Date: Friday, October 28th, 2022
+Web Application Name: To Do List - Midterm */
+
+
+// Importing the required Modules:
+
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -10,6 +19,8 @@ let session = require('express-session');
 let flash = require('connect-flash');
 let passport = require('passport');
 
+// Using the imported Modules:
+
 let app = express();
 
 app.use(session({
@@ -18,6 +29,7 @@ app.use(session({
   secret: "sessionSecret"
 }));
 
+// Implementations for Routers:
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
@@ -34,7 +46,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 
-// Sets up passport
+// Setting up Passport:
+
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
