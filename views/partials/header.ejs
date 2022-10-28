@@ -34,9 +34,9 @@
              
             <li class="nav-item dropdown">
               <% if (title == "To-Do List" || title == "Add a new Todo") { %>
-                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-todo"></i> To-Do</a>
+                <a class="nav-link active dropdown-toggle" href="/todo/add" role="button" data-bs-toggle="dropdown"><i class="fa fa-todo"></i> To-Do</a>
               <% } else { %>
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-todo"></i> To-Do</a>
+                <a class="nav-link dropdown-toggle" href="/todo/add" role="button" data-bs-toggle="dropdown"><i class="fa fa-todo"></i> To-Do</a>
               <% } %>       
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/todo/list"><i class="fa fa-list"></i> To-Do List</a></li>
